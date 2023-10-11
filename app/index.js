@@ -22,15 +22,17 @@ const Home = () => {
             <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="100%" />
+            <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%" />
           ),
           headerTitle: "",
         }}
       />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.view}>
+        <View style={styles.menu}>
           <Welcome />
+          <Popularjobs />
+          <Nearbyjobs />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.lightWhite,
   },
-  view: {
+  menu: {
     flex: 1,
     padding: SIZES.medium,
   },
