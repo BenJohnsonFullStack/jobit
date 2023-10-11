@@ -5,6 +5,7 @@ import {
   ScrollView,
   ActivityIndicator,
   RefreshControl,
+  StyleSheet,
 } from "react-native";
 import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
@@ -29,7 +30,18 @@ const JobDetails = () => {
     job_id: params.id,
   });
 
-  return <Text>JobDetails</Text>;
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <Stack.Screen></Stack.Screen>
+    </SafeAreaView>
+  );
 };
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: COLORS.lightWhite,
+  },
+});
 
 export default JobDetails;
