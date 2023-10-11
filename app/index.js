@@ -14,7 +14,25 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home</Text>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="100%" />
+          ),
+          headerTitle: "",
+        }}
+      />
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.view}>
+          <Welcome />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -22,8 +40,11 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: COLORS.lightWhite,
+  },
+  view: {
+    flex: 1,
+    padding: SIZES.medium,
   },
 });
 
