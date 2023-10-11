@@ -10,7 +10,7 @@ import {
 import { useRouter } from "expo-router";
 
 import styles from "./welcome.style";
-import { icons, SIZES } from "../../../constants";
+import { icons, images, SIZES } from "../../../constants";
 
 const Welcome = () => {
   const router = useRouter();
@@ -32,6 +32,14 @@ const Welcome = () => {
             placeholderTextColor="grey"
           />
         </View>
+
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+          <Image
+            source={icons.search}
+            resizeMode="contain"
+            style={styles.searchBtnImage}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
