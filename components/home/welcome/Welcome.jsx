@@ -37,13 +37,13 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
           <TextInput
             style={styles.searchInput}
             value={searchTerm}
-            onChange={(text) => setSearchTerm(text)} //  text is equivalent to e.target.value by default in React Native
+            onChangeText={(text) => setSearchTerm(text)} //  text is equivalent to e.target.value by default in React Native
             placeholder="What are you looking for?"
             placeholderTextColor="grey"
           />
         </View>
 
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image
             source={icons.search}
             resizeMode="contain"
