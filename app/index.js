@@ -11,6 +11,7 @@ import {
 } from "../components";
 const Home = () => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,7 +31,15 @@ const Home = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.menu}>
-          <Welcome />
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if (searchTerm) {
+                router.push(`/search/${searchTerm}`);
+              }
+            }}
+          />
           <Popularjobs />
           <Nearbyjobs />
         </View>

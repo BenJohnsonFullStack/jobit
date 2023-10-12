@@ -21,7 +21,7 @@ const jobTypes = [
   "Volunteer",
 ];
 
-const Welcome = () => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState("Full-Time");
 
@@ -36,8 +36,8 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=""
-            onChange={() => {}}
+            value={searchTerm}
+            onChange={(text) => setSearchTerm(text)} //  text is equivalent to e.target.value by default in React Native
             placeholder="What are you looking for?"
             placeholderTextColor="grey"
           />

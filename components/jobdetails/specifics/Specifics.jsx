@@ -5,7 +5,7 @@ import styles from "./specifics.style";
 const Specifics = ({ title, points }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}:</Text>
+      <Text style={styles.title}>Job Requirements:</Text>
 
       <View style={styles.pointsContainer}>
         {points.map((item, index) => (
